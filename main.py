@@ -53,6 +53,10 @@ class ReplyRequest(BaseModel):
 
 # ── Endpoints ─────────────────────────────────────────────────────────────────
 
+@app.get("/")
+def read_root():
+    return {"message": "Vera AI Bot is online! Base URL is active."}
+
 @app.get("/v1/healthz")
 def healthz():
     counts = store.counts()
